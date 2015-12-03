@@ -1,0 +1,25 @@
+li{
+  list-style-type: none;
+}
+ul{
+  list-style-type: none;
+}
+
+.style-4 input[type="text"] {
+  padding: 10px;
+  border: none;
+  border-bottom: solid 2px #c9c9c9;
+  transition: border 0.3s;
+  width: 500px;
+  margin-bottom: 35px;
+}
+.style-4 input[type="text"]:focus,
+.style-4 input[type="text"].focus {
+  border-bottom: solid 2px #969696;
+
+}
+
+
+.inputField{
+  margin-top: 25px;
+}

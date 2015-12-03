@@ -1,0 +1,137 @@
+<html ng-app="phonePrices">
+<head>
+  <link href='/css/style.css' rel='stylesheet' type='text/css'/>
+  <link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="css/animate.css" type="text/css" />
+  <link rel="stylesheet" href="styles.css" type="text/css" />
+	<link rel="stylesheet" href="css/responsive.css" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/plugins.js"></script>
+
+</head>
+<body ng-controller="phoneController">
+  <!-- Header
+  		============================================= -->
+  		<header id="header" class="full-header">
+
+  			<div id="header-wrap">
+
+  				<div class="container clearfix">
+
+  					<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+  					<!-- Logo
+  					============================================= -->
+  					<div id="logo">
+  			      <a href="/" style="margin-top:25px;"><small>Phone Price Tool</small></a>
+              <div class="text-rotater" data-separator="|" data-rotate="fadeInRight" data-speed="5000">
+                <h5><span class="t-rotate color">iPhone 5s $0|Samsung Galaxy S5 $0|LG G4 $0|Samsung Galaxy s6 32GB $99.99|iPhone 6 16GB $98.99|iPhone 6s 16GB $398.99|Samsung Galaxy Note 5 $249.99|Samsung Galaxy S6 Edge $199.99 </span></h5>
+              </div>
+  					</div><!-- #logo end -->
+
+  					<!-- Primary Navigation
+  					============================================= -->
+  					<nav id="primary-menu">
+
+  						<ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/version.html">Versions</a></li>
+                <li><a href="#">Last updated: December 3rd, 2015</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
+<div class="col_full">
+  <div class="col_half divcenter">
+    <div class="inputField">
+      <h3 class="center">Insert a phone name below for pricing..</h3>
+         <div class="input-group divcenter style-4">
+            <input class="style-4" type="text" placeholder="Ex. iPhone 6s 16GB" ng-model="search">
+        </div>
+    </div>
+    <ul id="PhoneList">
+      <span ng-hide="!search.length">
+      <li class="animate-phone" ng-repeat="item in list | filter:search as results">
+            <div class="col_full divcenter panel panel-default">
+							<div class="panel-heading">
+								<h2 class="panel-title">{{item.phone}}</h2>
+							</div>
+              <!--Price, Retail Voice, Phone-->
+							<div class="panel-body">
+                <p>2 Yr Voice/Data: {{item.price}}</p>
+                <p>2 Yr Voice only: {{item.voice}}</p>
+                <p>Retail Price: {{item.retail}}</p>
+              </div>
+						</div>
+      </li>
+      <li class="animate-phone" ng-if="results.length == 0">
+      <strong>No results found...Maybe you spelt something wrong? Spelling has to be exact</strong>
+    </li>
+      </span>
+    </ul>
+   </div>
+</div>
+</body>
+<footer id="footer" class="dark">
+
+			<!-- Copyrights
+			============================================= -->
+			<div id="copyrights">
+
+				<div class="container clearfix">
+
+					<div class="col_half">
+						<h1>DusenDesigns.com</h1>
+            <h4><small>Developed by Josh Stewart-Van Dusen</small></h4>
+            <h5><small><a href="/versions.html">V0.0.5</a></small></h5>
+					</div>
+
+					<div class="col_half col_last tright">
+						<div class="copyrights-menu copyright-links fright clearfix">
+							<a href="/">Home</a>/<a href="/version.html">Versions</a> / Found an error? Email me: joshs@Jump.ca
+						</div>
+          </div>
+          <div>
+						<div class="fright clearfix">
+							<a href="https://www.facebook.com/JoshStewartVanDusen" class="social-icon si-small si-borderless nobottommargin si-facebook">
+								<i class="icon-facebook"></i>
+								<i class="icon-facebook"></i>
+							</a>
+
+							<a href="https://twitter.com/JoshStewartVanD" class="social-icon si-small si-borderless nobottommargin si-twitter">
+								<i class="icon-twitter"></i>
+								<i class="icon-twitter"></i>
+							</a>
+
+						</div>
+					</div>
+				</div>
+
+			</div><!-- #copyrights end -->
+
+		</footer><!-- #footer end -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-70486326-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type="text/javascript">
+							$('[data-toggle=popover]').popover();
+</script>
+
+<script src="/js/angular.js"></script>
+<script src="/js/phones.js"></script>
+<script src="js/functions.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+</html>
